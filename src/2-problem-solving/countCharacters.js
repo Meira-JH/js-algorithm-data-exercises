@@ -39,13 +39,10 @@ export function characterCount(input) {
     }
 
     isStringOrArray(input).map((character) => {
-        if (typeof character === "string" && countedCharacters[character]) {
+        if (typeof character === "string") {
             // turns character to lower case and checks if the character existis in the answer obj, if it does adds +1 value to its value
-            countedCharacters[character.toLowerCase()]++;
-        }
-        if (typeof character === "string" && !countedCharacters[character]) {
-            // creates the character in answer obj
-            countedCharacters[character.toLowerCase()] = 1;
+            countedCharacters[character.toLowerCase()] =
+                ++countedCharacters[character] || 1;
         }
     });
 
