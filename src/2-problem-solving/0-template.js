@@ -8,10 +8,10 @@
 //5. what about more diverse/larger inputs?
 //6. what about null, undefined or empty outputs?
 
-// BREAK IT DOWN
+// BREAK IT DOWN, SOLVE AND SIMPLIFY
 //7. write down the steps needed
 //8. elaborate the most natural solution
 //9. refine the solution with more eficient/clean code
 
 // FINAL REASONING
-//X. Is it possible to solve the (output) problems with the inputs?
+//10. Is it possible to solve the (output) problems with the inputs?

@@ -2,7 +2,6 @@
 //1. re-estate the problem in own words, constructing a simple example and naming necessary variables.
 //2. how/what could be the inputs?
 //3. how/what could be the outputs?
-
 //need to iterate through data and return how many times each character appears
 //inputs: "I will be back" or array of characters like [a, b, 1, 2]
 //output: [{i: 2}, {w: 1}, {l: 2},{ b: 2}, {e: 1}, {c: 1},{k: 1}]
@@ -11,12 +10,11 @@
 //4. what about invalid and empty inputs?
 //5. what about more diverse/larger inputs?
 //6. what about null, undefined or empty outputs?
-
 //if input is empty, return message: "there are no characters in this sentence"
 //there is no impediment cause of size of input
 //if input invalid, or counting was impossible for some reason, default output should be: "we could not count these characters"
 
-// BREAK IT DOWN
+// BREAK IT DOWN, SOLVE AND SIMPLIFY
 //7. write down the steps needed
 //8. elaborate the most natural solution
 //9. refine the solution with more eficient/clean code
