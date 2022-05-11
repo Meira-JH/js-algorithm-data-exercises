@@ -27,11 +27,3 @@ export function addUpToEasy2(numberOfSum) {
 export function addWithMath(numberOfSum) {
     return console.log((numberOfSum * (numberOfSum + 1)) / 2);
 }
-
-export function performanceCheck(functionToCheck, argument) {
-    let t1 = performance.now();
-    argument && functionToCheck(argument);
-    !argument && functionToCheck();
-    let t2 = performance.now();
-    console.log(`Time to perform: ${t2 - t1} miliseconds`);
-}
