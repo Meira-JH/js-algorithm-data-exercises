@@ -5,6 +5,7 @@
 //ex: same([1, 2, 3], [4, 1, 9]) -> true
 
 //easy solution
+//O(n²) because of loop inside loop -> for...of and .indexOf
 export function respectivelySquaresNoob(values, squares) {
     //verifies if there are more elements in one array than other
     if (values.length !== squares.length) {
@@ -25,6 +26,7 @@ export function respectivelySquaresNoob(values, squares) {
     return true;
 }
 
+//complexity O(n)
 export function respectivelySquaresPro(valuesArray, squaresArray) {
     //defines objects contaning counting
     let valuesCounter = {};
