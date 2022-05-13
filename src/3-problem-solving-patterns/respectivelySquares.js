@@ -6,7 +6,7 @@
 
 //easy solution
 //O(n²) because of loop inside loop -> for...of and .indexOf
-export function respectivelySquaresNoob(values, squares) {
+export function isRespectivelySquaresNoob(values, squares) {
     //verifies if there are more elements in one array than other
     if (values.length !== squares.length) {
         return false;
@@ -27,7 +27,7 @@ export function respectivelySquaresNoob(values, squares) {
 }
 
 //complexity O(n)
-export function respectivelySquaresPro(valuesArray, squaresArray) {
+export function isRespectivelySquaresPro(valuesArray, squaresArray) {
     //defines objects contaning counting
     let valuesCounter = {};
     let squaresCounter = {};
