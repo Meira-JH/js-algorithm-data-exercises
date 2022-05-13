@@ -63,6 +63,8 @@ export function countUniqueValues(sortedArrayOfNumbers) {
             countingOfUnique.unique.push(sortedArrayOfNumbers[beginPointer]);
             ++countingOfUnique["total"];
             ++beginPointer;
+            //if I prefer to be very concise, I could use the same array
+            //to discover the number of unique elements
             sortedArrayOfNumbers[beginPointer] =
                 sortedArrayOfNumbers[secondPointer];
             ++secondPointer;
