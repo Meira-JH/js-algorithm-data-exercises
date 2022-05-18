@@ -59,3 +59,45 @@ export function isRespectivelySquaresPro(valuesArray, squaresArray) {
     //returns true if the function doesnt return in any conditional
     return true;
 }
+
+//EXERCISE: given two positive intergers, find out if the numbers have the same amount
+//of digits
+export function sameFrequency(number1, number2) {
+    //treat the possibility of numbers bigger than 2^53
+    const bigInt1 = BigInt(number1);
+    const bigInt2 = BigInt(number2);
+
+    //calculate length with toString and .match regex to
+    //count amount of digits
+    const length1 = bigInt1.toString().match(/\d/g).length;
+    const length2 = bigInt2.toString().match(/\d/g).length;
+
+    if (length1 === length2) return true;
+
+    return false;
+}
+
+export function sameFrequencyLoop(number1, number2) {
+    //verify if number
+    if (typeof number1 !== "number" || typeof number2 !== "number")
+        return false;
+
+    //treat the possibility of numbers bigger than 2^53
+    const bigInt1 = BigInt(number1).toString();
+    const bigInt2 = BigInt(number2).toString();
+
+    //two constants for counting number of digits
+    let digits1 = 0;
+    let digits2 = 0;
+
+    for (const digit of bigInt1) {
+        ++digits1;
+    }
+    for (const digit of bigInt2) {
+        ++digits2;
+    }
+
+    if (digits1 === digits2) return true;
+
+    return false;
+}
