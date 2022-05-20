@@ -21,3 +21,17 @@ export function findOddNumbers(array) {
 
     return result;
 }
+
+export function powerFunction(base, exponent) {
+    let isBaseZero = true;
+    if (!exponent && isBaseZero) {
+        return 1;
+    }
+    if (!exponent && !isBaseZero) {
+        return base;
+    }
+    if (exponent) {
+        isBaseZero = false;
+        return base * powerFunction(base, exponent - 1);
+    }
+}
