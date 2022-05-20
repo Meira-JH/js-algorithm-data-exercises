@@ -35,3 +35,9 @@ export function powerFunction(base, exponent) {
         return base * powerFunction(base, exponent - 1);
     }
 }
+
+export function factorial(number) {
+    if (number === 1 || number === 0) return 1;
+
+    return number * factorial(number - 1);
+}
