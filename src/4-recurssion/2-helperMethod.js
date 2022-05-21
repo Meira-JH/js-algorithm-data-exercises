@@ -18,3 +18,20 @@ export function findOddNumbers(array) {
 
     return result;
 }
+
+//write a function which takes array of numbers and returns
+//their products
+
+export function productOfAll(array) {
+    let product = 0;
+
+    function helper(helperInput) {
+        if (helperInput.length === 1) return;
+
+        product = helperInput[0] * helperInput[1];
+        helper(helperInput.slice(1));
+    }
+
+    helper(array);
+    return product;
+}
