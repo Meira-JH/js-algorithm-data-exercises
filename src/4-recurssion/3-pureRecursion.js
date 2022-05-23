@@ -41,3 +41,13 @@ export function factorial(number) {
 
     return number * factorial(number - 1);
 }
+
+//write a function that receives an index
+//and returns a number in the fibonacci sequence
+
+export function findFibonacciIndex(index) {
+    console.log(index);
+
+    if (index <= 2) return 1;
+    return findFibonacciIndex(index - 1) + findFibonacciIndex(index - 2);
+}
