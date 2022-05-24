@@ -32,16 +32,23 @@ export function isAnagram(input1, input2) {
     }
     //iterate through words to index letters
     for (let letter of word1) {
-        word1Letters[letter] ? ++letter : (word1Letters[letter] = 1);
+        word1Letters[letter]
+            ? ++word1Letters[letter]
+            : (word1Letters[letter] = 1);
     }
     for (let letter of word2) {
-        word2Letters[letter] ? ++letter : (word2Letters[letter] = 1);
+        word2Letters[letter]
+            ? ++word2Letters[letter]
+            : (word2Letters[letter] = 1);
     }
 
     //check if all letters in one array exist in the other
     for (let letter in word1Letters) {
         if (!word2Letters[letter])
             return console.log(response.false(word1, word2));
+        if (word1Letters[letter] !== word2Letters[letter]) {
+            return console.log(response.false(word1, word2));
+        }
     }
 
     return console.log(response.true(word1, word2));
