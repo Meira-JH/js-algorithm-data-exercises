@@ -1,3 +1,4 @@
+import { sameFrequency } from "./3-problem-solving-patterns/anagrams";
 import { sumUntill } from "./4-recurssion/1-intro";
 import { productOfAll } from "./4-recurssion/2-helperMethod";
 import { factorial, findFibonacciIndex } from "./4-recurssion/3-pureRecursion";
@@ -9,4 +10,4 @@ const number2 = 998890099988900999889009333;
 const number3 = 321;
 const number4 = 123;
 
-console.log(findFibonacciIndex(7));
+console.log(sameFrequency(number1, number2));

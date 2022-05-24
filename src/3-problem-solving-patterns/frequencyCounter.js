@@ -87,17 +87,20 @@ export function sameFrequencyLoop(number1, number2) {
     const bigInt2 = BigInt(number2).toString();
 
     //two constants for counting number of digits
-    let digits1 = 0;
-    let digits2 = 0;
+    let digits1 = {};
+    let digits2 = {};
 
     for (const digit of bigInt1) {
-        ++digits1;
+        digits1[digit] ? ++digits1[digit] : (digits1[digit] = 1);
     }
     for (const digit of bigInt2) {
-        ++digits2;
+        digits2[digit] ? ++digits2[digit] : (digits2[digit] = 1);
     }
 
-    if (digits1 === digits2) return true;
+    for (const digit in digits1) {
+        if (digits1[digit] !== digits2[digit]) return false;
+        if (!digits2[digit]) return false;
+    }
 
-    return false;
+    return true;
 }
