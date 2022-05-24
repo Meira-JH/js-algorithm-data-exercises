@@ -53,28 +53,3 @@ export function isAnagram(input1, input2) {
 
     return console.log(response.true(word1, word2));
 }
-
-export function sameFrequency(number1, number2) {
-    if (typeof number1 !== "number" || typeof number2 !== "number")
-        return false;
-    const bigInt1 = number1.toString();
-    const bigInt2 = number2.toString();
-
-    //two constants for counting number of digits
-    let digits1 = {};
-    let digits2 = {};
-
-    for (const digit of bigInt1) {
-        digits1[digit] ? ++digits1[digit] : (digits1[digit] = 1);
-    }
-    for (const digit of bigInt2) {
-        digits2[digit] ? ++digits2[digit] : (digits2[digit] = 1);
-    }
-
-    for (const digit in digits1) {
-        if (digits1[digit] !== digits2[digit]) return false;
-        if (!digits2[digit]) return false;
-    }
-
-    return true;
-}
