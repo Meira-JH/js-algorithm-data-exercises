@@ -82,3 +82,72 @@ export function countUniqueNumbers2() {
     //Set.size is the method to discover the amount of unique numbers of an array
     return set.size;
 }
+
+//function that checks is there are duplicate elements
+//in an array of data
+//O(n)
+export function areThereDuplicatesTwoLoops(...args) {
+    //transform arguments into array
+    const arrayOfElements = [...args];
+
+    //variables to count pointers positions
+    //second pointer begins 1 position ahead
+    let firstPointer = 0;
+    let secondPointer = 1;
+
+    //iterate through array for the first pointer
+    for (let i = firstPointer; i <= arrayOfElements.length - 2; i++) {
+        //iterate through array for the second pointer
+        for (let j = secondPointer; j <= arrayOfElements.length - 1; j++) {
+            //if finds duplicates, returns true
+            console.log(arrayOfElements[i], arrayOfElements[j]);
+            if (arrayOfElements[i] === arrayOfElements[j]) {
+                return true;
+            }
+            //else continues the loop
+        }
+        //once the first loop of the second pointer is finished
+        //sums one position for the second one
+        //so it doesnt have to iterate the previous element anymore
+        //OBS: the first pointer doesnt even need the counter variable
+        //once it will be equal to 'i'
+        ++secondPointer;
+    }
+    return false;
+}
+
+//O(n log n)
+export function areThereDuplicatesWhile(...args) {
+    //transform arguments into array
+    const arrayOfElements = [...args];
+
+    //variables to count pointers positions
+    //second pointer begins 1 position ahead
+    let firstPointer = 0;
+    let secondPointer = 1;
+
+    //iterate through array
+    while (secondPointer <= arrayOfElements.length) {
+        //checks if the elements in pointer positions
+        //are equal
+        if (arrayOfElements[firstPointer] === arrayOfElements[secondPointer]) {
+            //returns true if they are
+            return true;
+        }
+        //adds position to second pointer if they are not
+        ++secondPointer;
+
+        //checks if the second pointer is at the end of the array
+        //and if the first pointer is at a lower position of
+        //length - 1
+        if (
+            secondPointer === arrayOfElements.length &&
+            firstPointer < arrayOfElements.length - 1
+        ) {
+            //if not,
+            ++firstPointer;
+            secondPointer = firstPointer + 1;
+        }
+    }
+    return false;
+}
