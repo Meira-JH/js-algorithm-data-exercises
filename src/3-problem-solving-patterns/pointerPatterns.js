@@ -151,3 +151,44 @@ export function areThereDuplicatesWhile(...args) {
     }
     return false;
 }
+
+//function to check wether 2 inputs have
+//same elements in order
+//ex: abracadabra <> abc = true
+// abc <> acb = false
+
+export function containsInOrder(input1, input2) {
+    //establish biggest and smallest string
+    let smallestString = input1.length >= input2.length ? input2 : input1;
+    let biggestString = input1.length >= input2.length ? input1 : input2;
+
+    //variables to first and second pointer
+    let firstPointer = 0;
+    let secondPointer = 0;
+    //variable to store last matching position
+    //of the second input string (to establish order)
+    let lastInput2MatchingPosition = 0;
+    let numberOfMatches = 0;
+
+    while (firstPointer <= smallestString.length) {
+        if (smallestString[firstPointer] === biggestString[secondPointer]) {
+            lastInput2MatchingPosition = secondPointer;
+            ++firstPointer;
+            ++numberOfMatches;
+        }
+        if (
+            secondPointer === biggestString.length - 1 &&
+            smallestString[firstPointer] !== biggestString[secondPointer]
+        ) {
+            ++firstPointer;
+            secondPointer = lastInput2MatchingPosition;
+        }
+        ++secondPointer;
+    }
+
+    if (numberOfMatches === smallestString.length) {
+        return true;
+    }
+
+    return false;
+}
