@@ -2,7 +2,7 @@ export function maxSubarraySum(array, numberOfSummations) {
     //first verify if number of summations is lower than
     //array length
     if (array.length < numberOfSummations) {
-        return false;
+        return null;
     }
 
     let maxSum = -Infinity;
@@ -34,4 +34,48 @@ export function maxSubarraySum(array, numberOfSummations) {
     }
 
     return maxSum;
+}
+
+//find the smallest subarray which the elements summed have
+//an equal or greater value than the value of an argument
+
+export function subarrayLengthSumIsEqualOrGreater(array, comparativeValue) {
+    //defines size of the subArray
+    let subArrayLength = 1;
+    let subarrayStart = 0;
+    let subarrayEnd = subArrayLength - 1;
+    let tempSum = 0;
+
+    //loops the array
+    while (subArrayLength <= array.length) {
+        //checks if there is any individual number
+        // >= the comparative value
+
+        //loops the subarray summing elements
+        for (let i = subarrayStart; i <= subarrayEnd; i++) {
+            tempSum = tempSum + array[i];
+        }
+        //checks if sum should return
+        if (tempSum >= comparativeValue) return subArrayLength;
+
+        //if not, resets sum
+        tempSum = 0;
+
+        //if the window is in the last position of the input array,
+        //moves the window to the beggining and adds 1 length to it
+        if (subarrayEnd === array.length - 1) {
+            ++subArrayLength;
+            subarrayStart = 0;
+            subarrayEnd = subArrayLength - 1;
+        }
+        //if the window isnt in the last position, slides it
+        //one position to the right
+        if (subarrayEnd < array.length - 1) {
+            ++subarrayStart;
+            ++subarrayEnd;
+        }
+    }
+
+    //returns 0 if no match is found
+    return 0;
 }
