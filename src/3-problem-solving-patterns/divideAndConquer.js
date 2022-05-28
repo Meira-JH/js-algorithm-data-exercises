@@ -8,8 +8,6 @@ export function searchForElement(array, searchedValue) {
     //loop over the array
     while (minPosition <= maxPosition) {
         //define the middle point of the array
-        console.log("min ", minPosition);
-        console.log("max ", maxPosition);
         let middlePosition = Math.floor((minPosition + maxPosition) / 2);
         //define the currentElement as the medium point of the array
         const currentElement = array[middlePosition];
