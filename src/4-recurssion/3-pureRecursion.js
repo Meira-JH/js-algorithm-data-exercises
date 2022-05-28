@@ -46,8 +46,15 @@ export function factorial(number) {
 //and returns a number in the fibonacci sequence
 
 export function findFibonacciIndex(index) {
-    console.log(index);
-
     if (index <= 2) return 1;
     return findFibonacciIndex(index - 1) + findFibonacciIndex(index - 2);
+}
+
+//function that returns product of all elements of array
+//with array argument destructuring
+export function productOfArray([firstNumber, ...restOfArgument]) {
+    if (!restOfArgument.length) {
+        return firstNumber || 0;
+    }
+    return firstNumber * productOfArray(restOfArgument);
 }

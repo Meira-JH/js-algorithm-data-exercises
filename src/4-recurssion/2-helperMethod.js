@@ -33,5 +33,6 @@ export function productOfAll(array) {
     }
 
     helper(array);
+
     return product;
 }
