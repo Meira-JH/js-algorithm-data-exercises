@@ -37,7 +37,8 @@ export function powerFunction(base, exponent) {
 }
 
 export function factorial(number) {
-    if (number === 1 || number === 0) return 1;
+    if (number <= 1) return 1;
+    if (number < 0) return 0;
 
     return number * factorial(number - 1);
 }
