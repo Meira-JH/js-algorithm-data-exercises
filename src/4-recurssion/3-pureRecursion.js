@@ -58,3 +58,12 @@ export function productOfArray([firstNumber, ...restOfArgument]) {
     }
     return firstNumber * productOfArray(restOfArgument);
 }
+
+//function that returns the sum of all numbers
+//in sequence from 0 to the number of the input
+
+export function recursiveRange(number) {
+    if (number === 0) return 0;
+
+    return recursiveRange(number - 1) + number;
+}
