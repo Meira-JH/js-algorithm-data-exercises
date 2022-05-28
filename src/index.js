@@ -2,6 +2,7 @@ import { subarrayLengthSumIsEqualOrGreater } from "./3-problem-solving-patterns/
 import { productOfAll } from "./4-recurssion/2-helperMethod";
 import { productOfArray } from "./4-recurssion/3-pureRecursion";
 import { reverseString } from "./5-extra-problems/reverseString";
+import { linearSearch } from "./6-searching-algorithms/linearSearch";
 
 const array1 = [-1, -2, -2, 2, 4, 4, 4, 5, 6, 7, 7, 7, 9, 10];
 const array2 = [-1, -2, 2, 4, 5, 6, 7, 9, 10];
@@ -12,4 +13,4 @@ const number4 = 123;
 const string1 = "abc";
 const string2 = "abracadabra";
 
-console.log(reverseString("omg"));
+console.log(linearSearch(array1, 5));
