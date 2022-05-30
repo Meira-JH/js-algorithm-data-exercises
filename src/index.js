@@ -2,6 +2,7 @@ import { subarrayLengthSumIsEqualOrGreater } from "./3-problem-solving-patterns/
 import { productOfAll } from "./4-recurssion/2-helperMethod";
 import { productOfArray } from "./4-recurssion/3-pureRecursion";
 import { capitalizeFirstLetter } from "./5-extra-problems/capitalizeFirst";
+import { sumOfAllEvenElements } from "./5-extra-problems/evenElementsSum";
 import { flatten } from "./5-extra-problems/flattenArray";
 import { reverseString } from "./5-extra-problems/reverseString";
 import { someRecursive } from "./5-extra-problems/someRecursive";
@@ -18,5 +19,24 @@ const number4 = 123;
 const string1 = "abc";
 const string2 = "abracadabra";
 const arrayOfString1 = ["lol", "omg", "wtf"];
+const obj1 = {
+    outer: 2,
+    obj: {
+        inner: 2,
+        otherObj: {
+            superInner: 2,
+            notANumber: true,
+            alsoNotANumber: "yup",
+        },
+    },
+};
 
-console.log(capitalizeFirstLetter(arrayOfString1));
+const obj2 = {
+    a: 2,
+    b: { b: 2, bb: { b: 3, bb: { b: 2 } } },
+    c: { c: { c: 2 }, cc: "ball", ccc: 5 },
+    d: 1,
+    e: { e: { e: 2 }, ee: "car" },
+};
+
+console.log(sumOfAllEvenElements(obj2));
