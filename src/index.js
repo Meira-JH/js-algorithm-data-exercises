@@ -1,6 +1,7 @@
 import { subarrayLengthSumIsEqualOrGreater } from "./3-problem-solving-patterns/slidingWindow";
 import { productOfAll } from "./4-recurssion/2-helperMethod";
 import { productOfArray } from "./4-recurssion/3-pureRecursion";
+import { capitalizeFirstLetter } from "./5-extra-problems/capitalizeFirst";
 import { flatten } from "./5-extra-problems/flattenArray";
 import { reverseString } from "./5-extra-problems/reverseString";
 import { someRecursive } from "./5-extra-problems/someRecursive";
@@ -16,5 +17,6 @@ const number3 = 321;
 const number4 = 123;
 const string1 = "abc";
 const string2 = "abracadabra";
+const arrayOfString1 = ["lol", "omg", "wtf"];
 
-console.log(flatten(arrayOfArrays1));
+console.log(capitalizeFirstLetter(arrayOfString1));
