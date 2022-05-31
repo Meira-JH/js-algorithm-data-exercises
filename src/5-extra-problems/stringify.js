@@ -1,4 +1,4 @@
-const recursiveStringifyNums = (object) => {
+const stringifyObjectProperties = (object) => {
     // variable to store newObject
     let newObject = Object.assign({}, object);
 
