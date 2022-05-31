@@ -1,4 +1,4 @@
-export function sumOfAllEvenElements(object) {
+export function sumOfAllEvenProperties(object) {
     if (!object) {
         return 0;
     } else {
@@ -10,7 +10,7 @@ export function sumOfAllEvenElements(object) {
             }
             if (typeof object[prop] === "object") {
                 console.log(object[prop]);
-                sumOfEven = sumOfEven + sumOfAllEvenElements(object[prop]);
+                sumOfEven = sumOfEven + sumOfAllEvenProperties(object[prop]);
             }
         }
 
