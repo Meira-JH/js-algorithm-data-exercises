@@ -1,4 +1,5 @@
 import { capitalizeWords } from "./5-extra-problems/capitalizeWords";
+import { stringify } from "./5-extra-problems/stringify";
 
 const array1 = [-1, -2, -2, 2, 4, 4, 4, 5, 6, 7, 7, 7, 9, 10];
 const array2 = [-1, -2, 2, 4, 5, 6, 7, 9, 10];
@@ -31,4 +32,4 @@ const obj2 = {
     e: { e: { e: 2 }, ee: "car" },
 };
 
-console.log(capitalizeWords(arrayOfString1));
+console.log(stringify(obj2));
