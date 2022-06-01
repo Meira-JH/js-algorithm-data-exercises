@@ -1,4 +1,5 @@
 import { collectStrings } from "./5-extra-problems/collectStrings";
+import { javaScriptSort } from "./7-sort/javascriptSort";
 
 const array1 = [-1, -2, -2, 2, 4, 4, 4, 5, 6, 7, 7, 7, 9, 10];
 const array2 = [-1, -2, 2, 4, 5, 6, 7, 9, 10];
@@ -47,4 +48,4 @@ const obj = {
     },
 };
 
-console.log(collectStrings(obj));
+console.log(javaScriptSort(array1, "ascent"));
