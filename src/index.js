@@ -1,9 +1,11 @@
 import { collectStrings } from "./5-extra-problems/collectStrings";
+import { bubbleSort } from "./7-sort/bubbleSort";
 import { javaScriptSort } from "./7-sort/javascriptSort";
 
 const array1 = [-1, -2, -2, 2, 4, 4, 4, 5, 6, 7, 7, 7, 9, 10];
 const array2 = [-1, -2, 2, 4, 5, 6, 7, 9, 10];
-const array3 = [2, 4, 6];
+const array3 = [1, -2,4,  2, 4, -10, 5, 6, 30, 7, 23, 9, 10, 0];
+const array4 = [2, 4, 6];
 const arrayOfArrays1 = [1, 2, [2, 3], [7, 5, 24], 0, [0, 0, 1]];
 const number1 = 123123121231231212312312222;
 const number2 = 998890099988900999889009333;
@@ -48,4 +50,4 @@ const obj = {
     },
 };
 
-console.log(javaScriptSort(array1, "ascent"));
+console.log(bubbleSort(array3));
