@@ -1,6 +1,7 @@
 import { collectStrings } from "./5-extra-problems/collectStrings";
 import { bubbleSort } from "./7-sort/bubbleSort";
 import { javaScriptSort } from "./7-sort/javascriptSort";
+import { selectionSort } from "./7-sort/selectionSort";
 
 const array1 = [-1, -2, -2, 2, 4, 4, 4, 5, 6, 7, 7, 7, 9, 10];
 const array2 = [-1, -2, 2, 4, 5, 6, 7, 9, 10];
@@ -51,4 +52,4 @@ const obj = {
     },
 };
 
-console.log(bubbleSort(array5));
+console.log(selectionSort(array3));
