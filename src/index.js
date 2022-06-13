@@ -2,6 +2,7 @@ import { collectStrings } from "./5-extra-problems/collectStrings";
 import { bubbleSort } from "./7-sort/bubbleSort";
 import { javaScriptSort } from "./7-sort/javascriptSort";
 import { selectionSort } from "./7-sort/selectionSort";
+import { bonAppetit } from "./hackerRank/bonAppetit";
 import { findDayOfTheProgrammer } from "./hackerRank/dayOfTheProgrammer";
 
 const array1 = [-1, -2, -2, 2, 4, 4, 4, 5, 6, 7, 7, 7, 9, 10];
@@ -53,4 +54,4 @@ const obj = {
     },
 };
 
-console.log(findDayOfTheProgrammer(1918));
+console.log(bonAppetit([4, 1], [3, 10, 2, 9], 12))
