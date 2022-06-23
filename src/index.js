@@ -1,4 +1,5 @@
 import { mergeSort } from "./algIntermediate/mergeSort";
+import { quickSort } from "./algIntermediate/quickSort";
 import { array3 } from "./utils/data";
 
-console.log(mergeSort(array3))
+console.log(quickSort(array3));
