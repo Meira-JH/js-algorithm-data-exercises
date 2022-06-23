@@ -29,6 +29,8 @@
     ".prettierrc": "json",
     "Dockerfile-custom": "dockerfile"
   },
+  "editor.wordWrap": "bounded",
+  "editor.wordWrapColumn": 80,
   "workbench.tree.indent": 15,
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.inlineSuggest.enabled": true,
