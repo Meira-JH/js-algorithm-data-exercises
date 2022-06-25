@@ -1,6 +1,8 @@
 export const array1 = [-1, -2, -2, 2, 4, 4, 4, 5, 6, 7, 7, 7, 9, 10];
 export const array2 = [-1, -2, 2, 4, 5, 6, 7, 9, 10];
-export const array3 = [1, -2, 4, 2, 4, -10, 5, 6, 30, 7, 23, 9, 10, 0];
+export const array3 = [
+    1, -2, 4, 2, 4, -10, 5, 6, 30, 7, 23, 9, 10, 0, 1092385245,
+];
 export const array5 = [-1, -2, 2, 4, 5, 6, 7, 9, 8, 10];
 export const array4 = [2, 4, 6];
 export const arrayOfArrays1 = [1, 2, [2, 3], [7, 5, 24], 0, [0, 0, 1]];
