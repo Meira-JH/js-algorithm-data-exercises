@@ -38,12 +38,20 @@ export function radixSort(array) {
         //3.b.place each number in its corresponding bucket
         //3.c.replace the existing array for the array
         //in order of the buckets
-        let buckets = Array.from({ length: 10 }, () => []);
+        let negativeBuckets = Array.from({ length: 10 }, () => []);
+        let positiveBuckets = Array.from({ length: 10 }, () => []);
         for (let i = 0; i < array.length; i++) {
             const bucket = getDigitOfNumber(array[i], digit);
-            buckets[bucket].push(array[i]);
+            if (array[i] >= 0) {
+                positiveBuckets[bucket].push(array[i]);
+            } else {
+                negativeBuckets[negativeBuckets.length - 1 - bucket].push(
+                    array[i]
+                );
+            }
         }
-        array = [].concat(...buckets);
+        array = [].concat(...negativeBuckets, ...positiveBuckets);
+        console.log(array);
     }
     //returns the sorted array
     return array;
