@@ -1,6 +1,12 @@
-import { mergeSort } from "./algIntermediate/mergeSort";
-import { quickSort } from "./algIntermediate/quickSort";
-import { radixSort } from "./algIntermediate/radixSort";
-import { array3 } from "./utils/data";
+import { SinglyLinkedList } from "./dataStructures/singlyLinkedList";
 
-console.log(radixSort(array3));
+const list = new SinglyLinkedList();
+
+list.push("OI");
+list.push("VC QUER");
+list.push("COMPRAR UM ELEFANTE");
+list.push("marrom");
+list.push("e um passaro");
+list.push("amarelo?");
+
+console.log(list.tail);
