@@ -35,17 +35,27 @@ export class SinglyLinkedList {
     }
 
     pop() {
+        //checks if there is an element and return null if there isnt
         if (!this.head) return null;
 
+        //references a current element and the new tail after the pop
         let current = this.head;
         let newTail = current;
+
+        //iterate the list untill the element before last
         while (current.next) {
+            //define new tail value with current value
+            //define the next node value as the value of current element
             newTail = current;
             current = current.next;
         }
+        //tail incorporates newTail value
         this.tail = newTail;
+        //erases the old tail value
         this.tail.next = null;
+        //substract 1 from length
         --this.length;
+        //if there are no elements, turns every remaining reference to null
         if (!this.length) {
             this.head = null;
             this.tail = null;
