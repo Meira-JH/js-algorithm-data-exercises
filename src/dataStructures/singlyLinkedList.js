@@ -82,4 +82,23 @@ export class SinglyLinkedList {
         //returns deleted value
         return currentHead;
     }
+
+    //insert new node at beginning
+    unshift(nodeValue) {
+        //instantiate a new node
+        let newNode = new Node(nodeValue);
+        //if there is no head, add head and tail
+        if (!this.head && !this.length) {
+            this.head = newNode;
+            this.tail = newNode;
+            //else, make the new node the head and the head its next
+        } else {
+            let currentHead = this.head;
+            this.head = newNode;
+            this.head.next = currentHead;
+        }
+        //same as above
+        ++this.length;
+        return this;
+    }
 }
