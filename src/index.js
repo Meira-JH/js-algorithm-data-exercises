@@ -6,5 +6,4 @@ list.unshift("pirilim ");
 list.unshift("lol ");
 list.unshift("pirilim ");
 
-console.log(list.head);
-console.log(list);
+console.log(list.get(1));

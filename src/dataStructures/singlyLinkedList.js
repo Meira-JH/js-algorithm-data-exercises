@@ -101,4 +101,18 @@ export class SinglyLinkedList {
         ++this.length;
         return this;
     }
+
+    get(nodePosition) {
+        const lengthToPosition = this.length - 1;
+        if (nodePosition > lengthToPosition || nodePosition < 0) return null;
+
+        let listPosition = 0;
+        let listNode = this.head;
+        while (listPosition < nodePosition) {
+            listNode = listNode.next;
+            ++listPosition;
+        }
+
+        return listNode;
+    }
 }
