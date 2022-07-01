@@ -9,12 +9,7 @@ list.push("marrom");
 list.push("e um passaro");
 list.push("amarelo?");
 
-list.pop();
-list.pop();
-list.pop();
-list.pop();
-list.pop();
-list.pop();
+list.shift();
 
-console.log(list.tail);
+console.log(list.head);
 console.log(list);

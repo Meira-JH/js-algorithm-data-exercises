@@ -34,6 +34,7 @@ export class SinglyLinkedList {
         return this;
     }
 
+    //removes last element
     pop() {
         //checks if there is an element and return null if there isnt
         if (!this.head) return null;
@@ -64,6 +65,7 @@ export class SinglyLinkedList {
         return current;
     }
 
+    //removes first element
     shift() {
         if (!this.head) return null;
         //store currentHead to access .next after
@@ -72,6 +74,11 @@ export class SinglyLinkedList {
         this.head = currentHead.next;
         //substract 1 from length
         --this.length;
+        //if there are no elements, turn head and tail null
+        if (!this.length) {
+            this.head = null;
+            this.tail = null;
+        }
         //returns deleted value
         return currentHead;
     }
