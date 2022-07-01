@@ -63,4 +63,16 @@ export class SinglyLinkedList {
 
         return current;
     }
+
+    shift() {
+        if (!this.head) return null;
+        //store currentHead to access .next after
+        let currentHead = this.head;
+        //substitute head value for .next value
+        this.head = currentHead.next;
+        //substract 1 from length
+        --this.length;
+        //returns deleted value
+        return currentHead;
+    }
 }
