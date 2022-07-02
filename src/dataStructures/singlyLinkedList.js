@@ -134,4 +134,31 @@ export class SinglyLinkedList {
         //return the new value
         return currentNode.value;
     }
+
+    insert(nodeValue, nodePosition) {
+        //if node position === 0 just unshift
+        if (nodePosition === 0) return this.unshift(nodeValue);
+        //if node position is after last node, push
+        if (nodePosition === this.length) return this.push(nodeValue);
+
+        //define node before and current node at position
+        let nodeBefore = this.get(nodePosition - 1);
+        let currentNode = this.get(nodePosition);
+
+        //if no node is found in current, return null
+        if (!currentNode) return null;
+
+        //instantiate a new node to be inserted
+        const newNode = new Node(nodeValue);
+        //link it to the node before
+        nodeBefore.next = newNode;
+        //link the current to new node as its next
+        newNode.next = currentNode;
+        //override current node with the new node
+        currentNode = newNode;
+        //add 1 to lenght
+        ++this.length;
+        //return the new current node
+        return currentNode;
+    }
 }
