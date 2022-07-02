@@ -123,4 +123,15 @@ export class SinglyLinkedList {
 
         return listNode;
     }
+
+    set(nodeValue, nodePosition) {
+        //gets the current node value
+        const currentNode = this.get(nodePosition);
+        //returns null if no node is found
+        if (!currentNode) return null;
+        //set new value to node
+        currentNode.value = nodeValue;
+        //return the new value
+        return currentNode.value;
+    }
 }
