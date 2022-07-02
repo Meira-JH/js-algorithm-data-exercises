@@ -161,4 +161,56 @@ export class SinglyLinkedList {
         //return the new current node
         return currentNode;
     }
+
+    remove(nodePosition) {
+        //if node position === 0 just shift
+        if (nodePosition === 0) return this.shift();
+        //if node position is after last node, pop
+        if (nodePosition === this.length - 1) return this.pop();
+
+        //define node before and current node at position
+        let nodeBefore = this.get(nodePosition - 1);
+        let currentNode = this.get(nodePosition);
+
+        //if no node is found in current, return null
+        if (!currentNode) return null;
+
+        //override next element to nodeBefore with next element of current node
+        nodeBefore.next = currentNode.next;
+
+        //substract 1 to lenght
+        --this.length;
+
+        //return the node removed
+        return currentNode;
+    }
+
+    printList() {
+        let array = [];
+        let current = this.head;
+        while (current) {
+            array.push(current.value);
+            current = current.next;
+        }
+        console.log(array);
+    }
+
+    reverse() {
+        let oldHead = this.head;
+        this.head = this.tail;
+        this.tail = oldHead;
+
+        let currentNode = oldHead;
+        let tempNext = null;
+        let tempPrevious = null;
+        let listPosition = 0;
+        while (listPosition < this.length) {
+            tempNext = currentNode.next;
+            currentNode.next = tempPrevious;
+            tempPrevious = currentNode;
+            currentNode = tempNext;
+            ++listPosition;
+        }
+        return this;
+    }
 }

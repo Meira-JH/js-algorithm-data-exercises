@@ -2,10 +2,15 @@ import { SinglyLinkedList } from "./dataStructures/singlyLinkedList";
 
 const list = new SinglyLinkedList();
 
-list.unshift("pirilim ");
-list.unshift("lol ");
-list.unshift("pirilim ");
+list.push("pirilim");
+list.push("omg");
+list.push("lol");
+list.push("nice");
+list.push("pow");
+list.push("wow");
+list.push("pim pim");
 
-console.log(list.insert("omg", 3));
-
+list.printList();
+list.reverse();
 console.log(list);
+list.printList();
