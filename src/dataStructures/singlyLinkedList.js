@@ -103,13 +103,21 @@ export class SinglyLinkedList {
     }
 
     get(nodePosition) {
+        //define a variable to avoid confusion between index
+        //and length size
         const lengthToPosition = this.length - 1;
+        //return null if nodeposition doesnt exist in list
         if (nodePosition > lengthToPosition || nodePosition < 0) return null;
 
+        //define variable for the list position during list iteration
         let listPosition = 0;
+        //define variable for node iteration
         let listNode = this.head;
+        //iterate through list
         while (listPosition < nodePosition) {
+            //define the next element until arrive at the element indexed
             listNode = listNode.next;
+            //add index position iteration
             ++listPosition;
         }
 
