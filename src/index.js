@@ -1,6 +1,6 @@
-import { SinglyLinkedList } from "./dataStructures/singlyLinkedList";
+import { linkedList } from "./dataStructures/linkedList";
 
-const list = new SinglyLinkedList();
+const list = new linkedList();
 
 list.push("pirilim");
 list.push("omg");
@@ -8,9 +8,6 @@ list.push("lol");
 list.push("nice");
 list.push("pow");
 list.push("wow");
-list.push("pim pim");
+list.pop();
 
-list.printList();
-list.reverse();
 console.log(list);
-list.printList();

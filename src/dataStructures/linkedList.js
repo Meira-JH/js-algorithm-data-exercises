@@ -3,10 +3,11 @@ class Node {
     constructor(value) {
         this.value = value;
         this.next = null;
+        this.previous = null;
     }
 }
 
-export class SinglyLinkedList {
+export class linkedList {
     //defines head, tail and length
     constructor() {
         this.head = null;
@@ -19,13 +20,15 @@ export class SinglyLinkedList {
         //instantiate new node
         const newNode = new Node(value);
         //if there is no head, make it head
-        if (!this.head) {
+        //and tail, once there are no elements
+        if (!this.length) {
             this.head = newNode;
             this.tail = this.head;
             //else adds new element to end of list
             //and defines the new element as tail
         } else {
             this.tail.next = newNode;
+            newNode.previous = this.tail;
             this.tail = newNode;
         }
 
@@ -39,21 +42,17 @@ export class SinglyLinkedList {
         //checks if there is an element and return null if there isnt
         if (!this.head) return null;
 
-        //references a current element and the new tail after the pop
-        let current = this.head;
-        let newTail = current;
-
-        //iterate the list untill the element before last
-        while (current.next) {
-            //define new tail value with current value
-            //define the next node value as the value of current element
-            newTail = current;
-            current = current.next;
-        }
-        //tail incorporates newTail value
-        this.tail = newTail;
-        //erases the old tail value
+        //define curernt tail to reference
+        let currentTail = this.tail;
+        //define previousToTail to become the new tail
+        let previousToTail = currentTail.previous;
+        //erases the old tail previous connection
+        currentTail.previous = null;
+        //substitute tail node
+        this.tail = previousToTail;
+        //erase next element of the new tail
         this.tail.next = null;
+
         //substract 1 from length
         --this.length;
         //if there are no elements, turns every remaining reference to null
@@ -62,7 +61,7 @@ export class SinglyLinkedList {
             this.tail = null;
         }
 
-        return current;
+        return currentTail;
     }
 
     //removes first element
