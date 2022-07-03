@@ -15,7 +15,7 @@ export class linkedList {
         this.length = 0;
     }
 
-    //defines the method to add new elements to the end of list
+    //add new element to the end of list
     push(value) {
         //instantiate new node
         const newNode = new Node(value);
@@ -40,37 +40,38 @@ export class linkedList {
     //removes last element
     pop() {
         //checks if there is an element and return null if there isnt
-        if (!this.head) return null;
-
-        //define curernt tail to reference
-        let currentTail = this.tail;
+        if (!this.length) return null;
         //define previousToTail to become the new tail
-        let previousToTail = currentTail.previous;
-        //erases the old tail previous connection
-        currentTail.previous = null;
-        //substitute tail node
-        this.tail = previousToTail;
-        //erase next element of the new tail
-        this.tail.next = null;
+        let currentTail = this.tail;
+
+        //if there is only one element, erases head and tail reference
+        if (this.length === 1) {
+            this.head = null;
+            this.tail = null;
+        } else {
+            //substitute tail node
+            this.tail = currentTail.previous;
+            //erase next element of the new tail
+            this.tail.next = null;
+            //erases the old tail previous connection
+            currentTail.previous = null;
+        }
 
         //substract 1 from length
         --this.length;
-        //if there are no elements, turns every remaining reference to null
-        if (!this.length) {
-            this.head = null;
-            this.tail = null;
-        }
 
         return currentTail;
     }
 
     //removes first element
     shift() {
-        if (!this.head) return null;
+        if (!this.length) return null;
         //store currentHead to access .next after
         let currentHead = this.head;
         //substitute head value for .next value
         this.head = currentHead.next;
+        //erases previous connection
+        this.head.previous = null;
         //substract 1 from length
         --this.length;
         //if there are no elements, turn head and tail null
