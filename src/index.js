@@ -1,11 +1,3 @@
-import { linkedList } from "./dataStructures/linkedList";
+import { plusMinus } from "./hackerRank/oneWeekPreparation/plus-minus";
 
-const list = new linkedList();
-
-list.unshift("pirilim");
-list.unshift("pom pom");
-list.push("pim pom");
-list.insert(3, "wut");
-list.remove(2);
-
-list.printList();
+plusMinus([3, 3, 3, 1, 4, 5, 5]);
