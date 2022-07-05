@@ -2,9 +2,10 @@ import { linkedList } from "./dataStructures/linkedList";
 
 const list = new linkedList();
 
-list.push("pirilim");
-list.push("pom pom");
+list.unshift("pirilim");
+list.unshift("pom pom");
 list.push("pim pom");
+list.insert(3, "wut");
+list.remove(2);
 
-console.log(list.pop());
-console.log(list);
+list.printList();
