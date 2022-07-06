@@ -1,3 +1,3 @@
-import { plusMinus } from "./hackerRank/oneWeekPreparation/plus-minus";
+import { minMaxSum } from "./hackerRank/oneWeekPreparation/minMaxSum";
 
-plusMinus([3, 3, 3, 1, 4, 5, 5]);
+minMaxSum([4, 5, 6, 7, 8]);
