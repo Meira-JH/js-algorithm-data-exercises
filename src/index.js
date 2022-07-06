@@ -1,3 +1,4 @@
+import { lonelyInteger } from "./hackerRank/oneWeekPreparation/lonelyInt";
 import { timeConversion } from "./hackerRank/oneWeekPreparation/timeConversion";
 
-console.log(timeConversion("06:40:03AM"));
+console.log(lonelyInteger([0, 0, 2, 3, 3, 4, 4]));
