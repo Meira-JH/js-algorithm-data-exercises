@@ -1,3 +1,3 @@
-import { minMaxSum } from "./hackerRank/oneWeekPreparation/minMaxSum";
+import { timeConversion } from "./hackerRank/oneWeekPreparation/timeConversion";
 
-minMaxSum([4, 5, 6, 7, 8]);
+console.log(timeConversion("06:40:03AM"));
