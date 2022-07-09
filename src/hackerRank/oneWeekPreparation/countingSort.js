@@ -11,12 +11,16 @@ Returns
 */
 
 export function countingSort(arr) {
+    //create an array of 100 zero elements
     let frequencyArray = Array(100).fill(0);
 
     for (let number of arr) {
+        //checks if number is being counted for the first time
         if (!frequencyArray[number]) {
+            //count 1 if yes
             frequencyArray[number] = 1;
         } else {
+            //sum 1 if it has already been counted
             frequencyArray[number] += 1;
         }
     }
