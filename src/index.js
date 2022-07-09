@@ -1,6 +1,4 @@
-import { countingSort } from "./hackerRank/oneWeekPreparation/countingSort";
-import { diagonalDifference } from "./hackerRank/oneWeekPreparation/diagonalDifference";
-import { lonelyInteger } from "./hackerRank/oneWeekPreparation/lonelyInt";
-import { timeConversion } from "./hackerRank/oneWeekPreparation/timeConversion";
+import { ceasarCypher } from "./hackerRank/oneWeekPreparation/caesarCypher";
+import { towerBreaker } from "./hackerRank/oneWeekPreparation/towerBraker";
 
-console.log(countingSort([11, 2, 4]));
+console.log(ceasarCypher("abcxyz", 3));
