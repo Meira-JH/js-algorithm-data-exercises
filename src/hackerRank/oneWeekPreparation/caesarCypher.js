@@ -10,22 +10,41 @@ export function ceasarCypher(s, k) {
 
     //loop iterating the string to be cyphered
     for (const character of s) {
+        //create a dynamic variable for manipulation inside loop
         let char = character;
-        if (/^[a-zA-Z]+$/.test(character)) {
+        //checks if it is a lower case letter
+        if (/^[a-z]+$/.test(character)) {
+            //loop inside alphabet to find index of matching letter
             alphabet.forEach((letter, index) => {
-                if (letter === character.toLowerCase()) {
+                //look for matching letter
+                if (letter === character) {
+                    //cypher the letter
                     if (index + k < alphabet.length) {
                         char = alphabet[index + k];
                     } else {
+                        //jump to the start of alphabet when out of range
                         char = alphabet[index + k - alphabet.length];
                     }
                 }
             });
         }
+        //same logic but with upper case considerations
+        if (/^[A-Z]+$/.test(character)) {
+            alphabet.forEach((letter, index) => {
+                if (letter.toUpperCase() === character) {
+                    if (index + k < alphabet.length) {
+                        char = alphabet[index + k].toUpperCase();
+                    } else {
+                        char =
+                            alphabet[index + k - alphabet.length].toUpperCase();
+                    }
+                }
+            });
+        }
+        //construct sentence order
         cypheredSentence.push(char);
     }
 
-    cypheredSentence.join("");
-
-    return cypheredSentence;
+    //return cyphered sentence string
+    return cypheredSentence.join("");
 }
