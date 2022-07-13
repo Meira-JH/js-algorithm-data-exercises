@@ -2,13 +2,14 @@
 Julius Caesar protected his confidential information by encrypting it using a cipher. Caesar's cipher shifts each letter by a number of letters. If the shift takes you past the end of the alphabet, just rotate back to the front of the alphabet. In the case of a rotation by 3, w, x, y and z would map to z, a, b and c. 
 */
 
-export function ceasarCypher(s, k) {
-    //array to sort each cyphered element
-    let cypheredSentence = [];
-    //array with all elements to be cyphered
+export function caesarCipher(s, k) {
+    if(!s.length) return s
+    //array to sort each ciphered element
+    let cipheredSentence = [];
+    //array with all elements to be ciphered
     const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
 
-    //loop iterating the string to be cyphered
+    //loop iterating the string to be ciphered
     for (const character of s) {
         //create a dynamic variable for manipulation inside loop
         let char = character;
@@ -18,7 +19,7 @@ export function ceasarCypher(s, k) {
             alphabet.forEach((letter, index) => {
                 //look for matching letter
                 if (letter === character) {
-                    //cypher the letter
+                    //cipher the letter
                     if (index + k < alphabet.length) {
                         char = alphabet[index + k];
                     } else {
@@ -42,9 +43,9 @@ export function ceasarCypher(s, k) {
             });
         }
         //construct sentence order
-        cypheredSentence.push(char);
+        cipheredSentence.push(char);
     }
 
-    //return cyphered sentence string
-    return cypheredSentence.join("");
+    //return ciphered sentence string
+    return cipheredSentence.join("");
 }
