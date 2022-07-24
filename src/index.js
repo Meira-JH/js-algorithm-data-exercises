@@ -1,14 +1,9 @@
-import { Queue } from './dataStructures/queue';
+import { binarySearchTree } from './dataStructures/binaryTree';
 
+const bst = new binarySearchTree()
 
-const q = new Queue
-
-q.enqueue(1)
-q.enqueue(2)
-q.enqueue(3)
-q.enqueue(4)
-q.dequeue()
-q.dequeue()
-q.dequeue()
-q.dequeue()
-console.log(q)
+bst.insert(11)
+bst.insert(22)
+bst.insert(33)
+bst.insert(4)
+console.log(bst.get(22))
