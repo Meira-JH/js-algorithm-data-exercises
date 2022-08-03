@@ -79,6 +79,7 @@ export class binarySearchTree {
   breadthFirst(){
     let node = this.root
     let breadthQueue = new Queue()
+    let breadthArray = []
     let siblingsQueue = new Queue()
 
     siblingsQueue.enqueue(node)
@@ -86,12 +87,14 @@ export class binarySearchTree {
       node = siblingsQueue.dequeue()
 
       breadthQueue.enqueue(node.value.value)
+      breadthArray.push(node.value.value)
       if(node.value.left){
         siblingsQueue.enqueue(node.value.left)
+        
       }
       if(node.value.right) siblingsQueue.enqueue(node.value.right)
     }
 
-    return breadthQueue
+    return {breadthQueue, breadthArray}
   }
 }
