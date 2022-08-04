@@ -8,7 +8,7 @@ class Node {
   }
 }
 
-export class binarySearchTree {
+export class BinarySearchTree {
   constructor(){
     this.root = null
     this.size = 0
@@ -47,36 +47,17 @@ export class binarySearchTree {
       }    
   }
 
-  test(value, currentNode = this.root){
-    return currentNode
-  }
-
   get(value, currentNode = this.root){
-    if(!this.root) {
-      return null
-    }
-    if(currentNode.value === value) return currentNode
+    if(!currentNode) return null
 
-      if(value > currentNode.value){
-        if(currentNode.right.value === value){
-          return currentNode.right
-        } else {
-          this.get(value, currentNode.right ? currentNode.right : null)
-        }
+    if(value === currentNode.value) return currentNode
 
-      }
-      if(value < currentNode.value){
+    if(value < currentNode.value) return this.get(value, currentNode.left)
+    if(value > currentNode.value) return this.get(value, currentNode.right)
 
-        if(currentNode.left.value === value){
-          return currentNode.left
-        } else {
-          this.get(value, currentNode.left ? currentNode.left : null)
-        }
-    }
-    
   }
 
-  breadthFirst(){
+  breadthFirst() {
     let node = this.root
     let breadthQueue = new Queue()
     let breadthArray = []
