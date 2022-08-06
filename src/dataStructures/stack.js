@@ -1,3 +1,5 @@
+//a stack is a linear node relation that adds at the beginning and withdraws from the beginning
+
 class Node {
   constructor(value){
     this.value = value
@@ -34,7 +36,7 @@ export class Stack {
     if(!this.first) return null
 
     let temp = this.first
-    if(this.last === this.first){
+    if(this.size === 1){
       this.last = null
     }
     this.first = this.first.next

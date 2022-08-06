@@ -1,3 +1,6 @@
+//linear node relation where you only have the reference of next and previous elements
+//in singly linked lists we only have the next element reference
+
 class Node {
     //defines value of node and next node
     constructor(value) {

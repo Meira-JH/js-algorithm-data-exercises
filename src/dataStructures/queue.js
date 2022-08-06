@@ -1,3 +1,6 @@
+//queues are linear node relations that have only the next reference and it
+//we only add elemnts at the end and withdraw from the beginning
+
 class Node {
   constructor(value) {
     this.value = value

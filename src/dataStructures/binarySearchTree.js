@@ -1,3 +1,9 @@
+//binary trees have ONLY parent/child relation between nodes
+//one can have many children, which can have many other children
+//binary trees parentes have only 2 children
+//in binary searh trees all children to the left are smaller than the parent
+//all children to the right are bigger
+
 import { Queue } from './queue'
 
 class Node {
