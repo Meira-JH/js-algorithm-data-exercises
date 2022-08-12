@@ -1,13 +1,11 @@
-import { BinarySearchTree } from './dataStructures/binarySearchTree';
-import { Queue } from './dataStructures/queue';
+import { HashTable } from "./dataStructures/hashTable";
 
-const bst = new BinarySearchTree()
+let ht = new HashTable();
 
-bst.insert(11)
-bst.insert(22)
-bst.insert(33)
-bst.insert(4)
-bst.insert(10)
-bst.insert(100)
-bst.insert(1)
-console.log(bst.get(10))
+ht.set("greetings", "hello world!");
+ht.set("departure", "good bye world!");
+ht.set("cya", "see you soon!");
+ht.set("return", "look who's back!");
+ht.set("try again", "who let the dogs out?!");
+ht.set("hi", "Hi there!");
+console.log(ht.keyMap);
