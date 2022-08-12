@@ -1,3 +1,15 @@
+//COMPARISON ALGORITHM
+/* 
+O(2n)
+It separates numbers in buckets related to the last digit
+of the number
+ex:
+bucket 0: 10, 100, 2310, 205203495019250
+bucket 1: 11, 121, 12253461, 23425736572346524574581
+[...]
+bucket 9: 23519, 9, 23450624509379, 69
+*/
+
 function getDigitOfNumber(number, indexOfDigit) {
     //use Math.abs to handle negative numbers
     //use Math.pow to isolate the number after
