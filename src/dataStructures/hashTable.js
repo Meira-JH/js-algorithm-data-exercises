@@ -40,7 +40,7 @@ export class HashTable {
         if (!this.keyMap[hashedIndex]) {
             this.keyMap[hashedIndex] = [];
         }
-        // insert nested elements inside an index
+        // insert nested elements inside an index, overwriting existing values and keys
         if (this.keyMap[hashedIndex].length > 0) {
             for (let [index, element] of this.keyMap[hashedIndex].entries()) {
                 if (element.key === key || element.value === value) {
@@ -87,5 +87,22 @@ export class HashTable {
         }
 
         return values;
+    }
+
+    keys() {
+        let keys = [];
+
+        for (let i = 0; i < this.keyMap.length; i++) {
+            if (this.keyMap[i]) {
+                for (const element of this.keyMap[i]) {
+                    //avoid duplicate values
+                    if (!keys.includes(element.key)) {
+                        keys.push(element.key);
+                    }
+                }
+            }
+        }
+
+        return keys;
     }
 }

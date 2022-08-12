@@ -12,3 +12,4 @@ ht.set("try again", "who let the dogs out?!");
 ht.set("hi", "Hi there!");
 console.log(ht.keyMap);
 console.log(ht.values());
+console.log(ht.keys());
