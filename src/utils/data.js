@@ -48,3 +48,5 @@ const obj = {
         },
     },
 };
+
+export const alphabetMatrix = ["abc", "bca", "aaa"];
