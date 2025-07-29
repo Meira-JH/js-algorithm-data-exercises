@@ -1,4 +1,4 @@
-import { gridChallenge } from "./hackerRank/oneWeekPreparation/gridChallenge";
-import { alphabetMatrix } from "./utils/data";
+import { salesByMatch } from "./hackerRank/interviewPreparationKit/salesByMatch.js";
+import { arrayOfNumbers } from "./utils/data.js";
 
-gridChallenge(alphabetMatrix);
+salesByMatch(arrayOfNumbers);

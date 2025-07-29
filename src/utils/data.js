@@ -50,3 +50,8 @@ const obj = {
 };
 
 export const alphabetMatrix = ["abc", "bca", "aaa"];
+
+export const arrayOfNumbers = [
+    1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 2, 3, 34, 3, 6, 8, 23, 9, 0, 75, 7, 1, 2,
+    0, 8, 7, 2, 3, 5, 9, 45, 98, 23, 98, 67, 23, 1, 34, 56,
+];
