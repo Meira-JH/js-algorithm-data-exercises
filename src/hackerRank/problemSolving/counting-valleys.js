@@ -25,4 +25,54 @@
 // , the number of steps in the hike.
 // The second line contains a single string , of characters that describe the path.
 
-export function countingValleys(steps, path) {}
+export function countingValleys(steps, path) {
+  //track sea level, steps, mountains and valleys
+  let seaLevel = true;
+  let stepsUpTheMountain = 0;
+  let stepsDownTheValley = 0;
+  let totalValleys = 0;
+  let totalMountains = 0;
+
+  // iterate the path array
+  for (let i = 0; i < steps; i++) {
+    //if sea level is true, count valleys and mountains based on present step
+    if (seaLevel) {
+      //reset steps after reaching sea level
+      stepsDownTheValley = 0;
+      stepsUpTheMountain = 0;
+
+      //checks first step
+      if (path[i] === 'D') {
+        totalValleys++;
+        stepsDownTheValley++;
+      }
+      if (path[i] === 'U') {
+        totalMountains++;
+        stepsUpTheMountain++;
+      }
+
+      seaLevel = false;
+    } else {
+      // track steps to know if on sea level
+      if (stepsDownTheValley && path[i] === 'D') {
+        stepsDownTheValley++;
+      }
+      if (stepsDownTheValley && path[i] === 'U') {
+        stepsDownTheValley--;
+      }
+      if (stepsUpTheMountain && path[i] === 'D') {
+        stepsUpTheMountain--;
+      }
+      if (stepsUpTheMountain && path[i] === 'U') {
+        stepsUpTheMountain++;
+      }
+    }
+
+    if (!stepsDownTheValley && !stepsUpTheMountain) {
+      seaLevel = true;
+    }
+  }
+
+  //returns the number of valleys traversed
+  return totalValleys;
+}
