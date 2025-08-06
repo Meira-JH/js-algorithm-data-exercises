@@ -5,25 +5,25 @@
 
 //O(n)
 export function addUpToEasy(numberOfSum) {
-    let sum = 0;
-    let rounds = 1;
-    while (rounds < numberOfSum + 1) {
-        sum += rounds;
-        rounds++;
-    }
+  let sum = 0;
+  let rounds = 1;
+  while (rounds < numberOfSum + 1) {
+    sum += rounds;
+    rounds++;
+  }
 
-    return console.log(sum);
+  return console.log(sum);
 }
 
 export function addUpToEasy2(numberOfSum) {
-    let sum = 0;
-    for (let i = 1; i <= numberOfSum; i++) {
-        sum += i;
-    }
-    return console.log(sum);
+  let sum = 0;
+  for (let i = 1; i <= numberOfSum; i++) {
+    sum += i;
+  }
+  return console.log(sum);
 }
 
 //O(1)
 export function addWithMath(numberOfSum) {
-    return console.log((numberOfSum * (numberOfSum + 1)) / 2);
+  return console.log((numberOfSum * (numberOfSum + 1)) / 2);
 }

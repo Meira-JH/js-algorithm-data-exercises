@@ -10,17 +10,17 @@ Returns
 */
 
 export function lonelyInteger(a) {
-    let lonelyInt = {};
+  let lonelyInt = {};
 
-    for (let number of a) {
-        if (!lonelyInt[number]) {
-            lonelyInt[number] = true;
-        } else {
-            delete lonelyInt[number];
-        }
+  for (let number of a) {
+    if (!lonelyInt[number]) {
+      lonelyInt[number] = true;
+    } else {
+      delete lonelyInt[number];
     }
+  }
 
-    console.log(lonelyInt);
+  console.log(lonelyInt);
 
-    return Object.keys(lonelyInt)[0];
+  return Object.keys(lonelyInt)[0];
 }

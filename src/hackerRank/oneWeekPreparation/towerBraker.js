@@ -11,18 +11,18 @@ Given the values of n and m , determine which player will win. If the first play
 */
 
 export function towerBreaker(n, m) {
-    let towers = [];
-    for (let i = 0; i < n; i++) {
-        towers = [...towers, m];
-    }
+  let towers = [];
+  for (let i = 0; i < n; i++) {
+    towers = [...towers, m];
+  }
 
-    function bestMove(towerHeight) {
-        Array(towerHeight).map((move) => {
-            if (towerHeight % move === 0) {
-                return move;
-            }
-        });
-    }
+  function bestMove(towerHeight) {
+    Array(towerHeight).map((move) => {
+      if (towerHeight % move === 0) {
+        return move;
+      }
+    });
+  }
 
-    console.log(bestMove(m));
+  console.log(bestMove(m));
 }

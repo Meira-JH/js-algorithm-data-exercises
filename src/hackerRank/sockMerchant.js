@@ -12,18 +12,18 @@ sockMerchant has the following parameter(s):
 Returns: int / the number of pairs
  */
 
-export function sockMerchant (numberOfSocks, arrayOfColors){
-    let firstPointer = 0
-    let secondPointer = 1
-    let numberOfPairs = 0
+export function sockMerchant(numberOfSocks, arrayOfColors) {
+  let firstPointer = 0;
+  let secondPointer = 1;
+  let numberOfPairs = 0;
 
-    for(let i = firstPointer; i <= arrayOfColors.length; i++){
-        for(let j = secondPointer; j <= arrayOfColors.length; j++){
-            if(arrayOfColors[i] === arrayOfColors[j]){
-                ++firstPointer
-                secondPointer = firstPointer + 1
-                ++numberOfPairs
-            }
-        }
+  for (let i = firstPointer; i <= arrayOfColors.length; i++) {
+    for (let j = secondPointer; j <= arrayOfColors.length; j++) {
+      if (arrayOfColors[i] === arrayOfColors[j]) {
+        ++firstPointer;
+        secondPointer = firstPointer + 1;
+        ++numberOfPairs;
+      }
     }
+  }
 }

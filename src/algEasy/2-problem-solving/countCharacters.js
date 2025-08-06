@@ -20,38 +20,38 @@
 //9. refine the solution with more eficient/clean code
 
 export function characterCount(input) {
-    let countedCharacters = {};
-    //creates the object for the answer
+  let countedCharacters = {};
+  //creates the object for the answer
 
-    function isStringOrArray(input) {
-        let arrayOfCharacters = [];
-        //checks if input is array or string
-        if (typeof input === "string") {
-            arrayOfCharacters = input.split("");
-        }
-        if (Array.isArray(input)) {
-            arrayOfCharacters = input;
-        }
-
-        return arrayOfCharacters;
+  function isStringOrArray(input) {
+    let arrayOfCharacters = [];
+    //checks if input is array or string
+    if (typeof input === 'string') {
+      arrayOfCharacters = input.split('');
+    }
+    if (Array.isArray(input)) {
+      arrayOfCharacters = input;
     }
 
-    isStringOrArray(input).map((character) => {
-        if (typeof character === "string") {
-            // turns character to lower case and checks if the character existis in the answer obj, if it does adds +1 value to its value
-            countedCharacters[character.toLowerCase()] =
-                ++countedCharacters[character] || 1;
-        }
-    });
+    return arrayOfCharacters;
+  }
 
-    // if iteration through elements was possible, returns the count
-    if (Object.keys(countedCharacters).length > 0) return countedCharacters;
-    // if there are empty or input is not a string
-    if (!input || typeof input !== "string")
-        return { message: "This input is invalid" };
+  isStringOrArray(input).map((character) => {
+    if (typeof character === 'string') {
+      // turns character to lower case and checks if the character existis in the answer obj, if it does adds +1 value to its value
+      countedCharacters[character.toLowerCase()] =
+        ++countedCharacters[character] || 1;
+    }
+  });
 
-    // invalid inputs and problems on counting returns default message
-    return "This count was not possible. It might be a problem with the input.";
+  // if iteration through elements was possible, returns the count
+  if (Object.keys(countedCharacters).length > 0) return countedCharacters;
+  // if there are empty or input is not a string
+  if (!input || typeof input !== 'string')
+    return { message: 'This input is invalid' };
+
+  // invalid inputs and problems on counting returns default message
+  return 'This count was not possible. It might be a problem with the input.';
 }
 
 // FINAL REASONING

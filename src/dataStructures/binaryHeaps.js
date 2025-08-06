@@ -9,28 +9,26 @@
 // it is a binary tree
 // sibling nodes have no value order (only temporal)
 
-
 class MaxBinaryHeap {
-  constructor(){
-    this.values = []
+  constructor() {
+    this.values = [];
   }
 
-  insert(element){
+  insert(element) {
     this.values.push(element);
     this.bubbleUp();
   }
 
-  bubbleUp(){
+  bubbleUp() {
     let elementIndex = this.values.lenght - 1;
-    const element = this.values[elementIndex]
-    while(elementIndex > 0){
-      let parentIndex = Math.floor((elementIndex - 1)/2)
-      let parent = this.values[parentIndex]
-      if(element <= parent) break
-        this.values[parentIndex] = element
-        this.values[elementIndex] = parent
-        elementIndex = parentIndex
-      
+    const element = this.values[elementIndex];
+    while (elementIndex > 0) {
+      let parentIndex = Math.floor((elementIndex - 1) / 2);
+      let parent = this.values[parentIndex];
+      if (element <= parent) break;
+      this.values[parentIndex] = element;
+      this.values[elementIndex] = parent;
+      elementIndex = parentIndex;
     }
   }
 }

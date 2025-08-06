@@ -10,22 +10,21 @@ Return
  */
 
 export function diagonalDifference(arr) {
-    arr.shift();
-    let absDiagonalDifference = 0;
-    let numberOfDiagonals = arr.length;
-    let diagonalLoop = 0;
-    let diagonalSumLeft = 0;
-    let diagonalSumRight = 0;
+  arr.shift();
+  let absDiagonalDifference = 0;
+  let numberOfDiagonals = arr.length;
+  let diagonalLoop = 0;
+  let diagonalSumLeft = 0;
+  let diagonalSumRight = 0;
 
-    while (diagonalLoop < numberOfDiagonals) {
-        diagonalSumLeft += arr[diagonalLoop][diagonalLoop];
-        diagonalSumRight +=
-            arr[diagonalLoop][numberOfDiagonals - 1 - diagonalLoop];
+  while (diagonalLoop < numberOfDiagonals) {
+    diagonalSumLeft += arr[diagonalLoop][diagonalLoop];
+    diagonalSumRight += arr[diagonalLoop][numberOfDiagonals - 1 - diagonalLoop];
 
-        ++diagonalLoop;
-    }
+    ++diagonalLoop;
+  }
 
-    absDiagonalDifference = Math.abs(diagonalSumLeft - diagonalSumRight);
+  absDiagonalDifference = Math.abs(diagonalSumLeft - diagonalSumRight);
 
-    return absDiagonalDifference;
+  return absDiagonalDifference;
 }

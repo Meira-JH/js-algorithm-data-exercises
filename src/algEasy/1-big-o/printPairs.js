@@ -1,8 +1,8 @@
 //O(n²)
 export function printAllPairs(n) {
-    for (let i = 0; i <= n; i++) {
-        for (let j = 0; j <= n; j++) {
-            console.log(i, j);
-        }
+  for (let i = 0; i <= n; i++) {
+    for (let j = 0; j <= n; j++) {
+      console.log(i, j);
     }
+  }
 }

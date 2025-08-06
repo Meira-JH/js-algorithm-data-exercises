@@ -5,20 +5,20 @@
 //returns 'Bon Appetit' if bill is fair
 
 export function bonAppetit(
-    [numberOfOrderedItems, itemNotConsumedByAnnaIndex],
-    billItems,
-    valuePayedByAnna
+  [numberOfOrderedItems, itemNotConsumedByAnnaIndex],
+  billItems,
+  valuePayedByAnna
 ) {
-    function sumArray(array) {
-        return array.reduce((item1, item2) => item1 + item2);
-    }
-    const totalCost = sumArray(billItems);
+  function sumArray(array) {
+    return array.reduce((item1, item2) => item1 + item2);
+  }
+  const totalCost = sumArray(billItems);
 
-    const fairShare = (totalCost - billItems[itemNotConsumedByAnnaIndex]) / 2;
+  const fairShare = (totalCost - billItems[itemNotConsumedByAnnaIndex]) / 2;
 
-    if (fairShare === valuePayedByAnna) return "Bon Appetit";
+  if (fairShare === valuePayedByAnna) return 'Bon Appetit';
 
-    const refund = valuePayedByAnna - fairShare
+  const refund = valuePayedByAnna - fairShare;
 
-    return refund;
+  return refund;
 }

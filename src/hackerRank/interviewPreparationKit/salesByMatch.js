@@ -20,36 +20,36 @@
 // , the colors of the socks in the pile.
 
 export function salesByMatch(ar) {
-    const n = ar.length;
+  const n = ar.length;
 
-    //ar for counting each sock color
-    const arrayForCountingSocksColors = [];
-    //matching pairs counter
-    let matchingPairs = 0;
+  //ar for counting each sock color
+  const arrayForCountingSocksColors = [];
+  //matching pairs counter
+  let matchingPairs = 0;
 
-    //iterate the ar to count
-    for (let i = 0; i < n; i++) {
-        if (arrayForCountingSocksColors[ar[i]]) {
-            arrayForCountingSocksColors[ar[i]]++;
-        } else {
-            arrayForCountingSocksColors[ar[i]] = 1;
-        }
+  //iterate the ar to count
+  for (let i = 0; i < n; i++) {
+    if (arrayForCountingSocksColors[ar[i]]) {
+      arrayForCountingSocksColors[ar[i]]++;
+    } else {
+      arrayForCountingSocksColors[ar[i]] = 1;
     }
+  }
 
-    for (const sockColor of arrayForCountingSocksColors) {
-        //if 1 continue
-        if (sockColor === 1 || !sockColor) {
-            continue;
-        } //if reminder 2 === 0 count half
-        if (sockColor % 2 === 0) {
-            matchingPairs += sockColor / 2;
+  for (const sockColor of arrayForCountingSocksColors) {
+    //if 1 continue
+    if (sockColor === 1 || !sockColor) {
+      continue;
+    } //if reminder 2 === 0 count half
+    if (sockColor % 2 === 0) {
+      matchingPairs += sockColor / 2;
 
-            //else subtract 1 and count half
-        } else {
-            matchingPairs += (sockColor - 1) / 2;
-        }
+      //else subtract 1 and count half
+    } else {
+      matchingPairs += (sockColor - 1) / 2;
     }
-    // how many  matching pairs are there?
-    console.log("MATCHING PAIRS:", matchingPairs);
-    return matchingPairs;
+  }
+  // how many  matching pairs are there?
+  console.log('MATCHING PAIRS:', matchingPairs);
+  return matchingPairs;
 }
