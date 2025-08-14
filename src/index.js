@@ -1,4 +1,6 @@
-import { countingValleys } from './hackerRank/problemSolving/counting-valleys.js';
-import { randomSteps } from './utils/data.js';
+import {
+  mockArray,
+  pickingNumbers,
+} from './hackerRank/problemSolving/picking-numbers.js';
 
-countingValleys(randomSteps.length, randomSteps);
+pickingNumbers(mockArray);
