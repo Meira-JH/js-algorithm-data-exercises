@@ -1,6 +1,9 @@
 import {
-  mockArray,
-  pickingNumbers,
-} from './hackerRank/problemSolving/picking-numbers.js';
+  climbingLeaderboardMock,
+  climbingTheLeaderboard,
+} from './hackerRank/problemSolving/climbing-the-leaderboard.js';
 
-pickingNumbers(mockArray);
+climbingTheLeaderboard(
+  climbingLeaderboardMock.ranked,
+  climbingLeaderboardMock.player
+);
