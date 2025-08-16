@@ -1,9 +1,6 @@
 import {
-  climbingLeaderboardMock,
-  climbingTheLeaderboard,
-} from './hackerRank/problemSolving/climbing-the-leaderboard.js';
+  hurdleRace,
+  hurdleRaceMock,
+} from './hackerRank/problemSolving/the-hurdle-race.js';
 
-climbingTheLeaderboard(
-  climbingLeaderboardMock.ranked,
-  climbingLeaderboardMock.player
-);
+hurdleRace(hurdleRaceMock.k, hurdleRaceMock.height);
