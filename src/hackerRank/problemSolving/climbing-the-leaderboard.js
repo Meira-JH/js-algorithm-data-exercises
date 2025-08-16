@@ -99,13 +99,13 @@ export const climbingLeaderboardMock = {
 };
 
 function eraseDuplicatesInArray(array) {
-  let rankedArrayWithoutDuplicates = [];
+  const rankedArrayWithoutDuplicates = [];
 
   for (let i = 0; i < array.length; i++) {
     if (array[i] === array[i + 1]) {
       continue;
     }
-    rankedArrayWithoutDuplicates = [...rankedArrayWithoutDuplicates, array[i]];
+    rankedArrayWithoutDuplicates.push(array[i]);
   }
 
   return rankedArrayWithoutDuplicates;
@@ -113,19 +113,20 @@ function eraseDuplicatesInArray(array) {
 
 export function climbingTheLeaderboard(ranked, player) {
   const rankedArrayWithoutDuplicates = eraseDuplicatesInArray(ranked);
-  const playersRankAfterGame = [];
+  const playerRankAfterPlay = [];
   let rankedIndex = rankedArrayWithoutDuplicates.length - 1;
 
-  for (let i = 0; i < player.length; i++) {
+  for (let playerIndex = 0; playerIndex < player.length; playerIndex++) {
     while (
       rankedIndex >= 0 &&
-      player[i] >= rankedArrayWithoutDuplicates[rankedIndex]
+      rankedArrayWithoutDuplicates[rankedIndex] <= player[playerIndex]
     ) {
       rankedIndex--;
     }
 
-    playersRankAfterGame.push(rankedIndex + 2);
+    playerRankAfterPlay.push(rankedIndex + 2);
   }
 
-  console.log(playersRankAfterGame);
+  console.log(playerRankAfterPlay);
+  return playerRankAfterPlay;
 }
