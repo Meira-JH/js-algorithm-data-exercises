@@ -1,6 +1,6 @@
 import {
-  hurdleRace,
-  hurdleRaceMock,
-} from './hackerRank/problemSolving/the-hurdle-race.js';
+  designerPdfViewer,
+  designerPdfViewerMock,
+} from './hackerRank/problemSolving/designer-pdf-viewer.js';
 
-hurdleRace(hurdleRaceMock.k, hurdleRaceMock.height);
+designerPdfViewer(designerPdfViewerMock.h, designerPdfViewerMock.word);
