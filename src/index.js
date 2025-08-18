@@ -1,6 +1,3 @@
-import {
-  designerPdfViewer,
-  designerPdfViewerMock,
-} from './hackerRank/problemSolving/designer-pdf-viewer.js';
+import { utopianTree } from './hackerRank/problemSolving/utopian-tree.js';
 
-designerPdfViewer(designerPdfViewerMock.h, designerPdfViewerMock.word);
+utopianTree(5);
