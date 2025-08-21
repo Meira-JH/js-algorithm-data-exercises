@@ -1,3 +1,6 @@
-import { utopianTree } from './hackerRank/problemSolving/utopian-tree.js';
+import {
+  angryProfessor,
+  angryProfessorMock,
+} from './hackerRank/problemSolving/angry-professor.js';
 
-utopianTree(5);
+angryProfessor(angryProfessorMock.k, angryProfessorMock.a);
