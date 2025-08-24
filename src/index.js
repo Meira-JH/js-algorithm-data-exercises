@@ -1,6 +1,10 @@
 import {
-  angryProfessor,
-  angryProfessorMock,
-} from './hackerRank/problemSolving/angry-professor.js';
+  beaultifulDayMock,
+  beautifulDayAtTheMovie,
+} from './hackerRank/problemSolving/beautiful-days-at-the-movies.js';
 
-angryProfessor(angryProfessorMock.k, angryProfessorMock.a);
+beautifulDayAtTheMovie(
+  beaultifulDayMock.startingDay,
+  beaultifulDayMock.endDay,
+  beaultifulDayMock.k
+);
