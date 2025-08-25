@@ -1,10 +1,3 @@
-import {
-  beaultifulDayMock,
-  beautifulDayAtTheMovie,
-} from './hackerRank/problemSolving/beautiful-days-at-the-movies.js';
+import { strangeAdvertising } from './hackerRank/problemSolving/strange-advertising.js';
 
-beautifulDayAtTheMovie(
-  beaultifulDayMock.startingDay,
-  beaultifulDayMock.endDay,
-  beaultifulDayMock.k
-);
+strangeAdvertising(3);
