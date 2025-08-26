@@ -1,3 +1,10 @@
-import { strangeAdvertising } from './hackerRank/problemSolving/strange-advertising.js';
+import {
+  saveThePrisoner,
+  saveThePrisonerMock,
+} from './hackerRank/problemSolving/save-the-prisoner.js';
 
-strangeAdvertising(3);
+saveThePrisoner(
+  saveThePrisonerMock.n,
+  saveThePrisonerMock.m,
+  saveThePrisonerMock.s
+);
