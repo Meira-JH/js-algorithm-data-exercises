@@ -22,31 +22,6 @@ export class LinkedListSimple {
     return false;
   }
 
-  push(value) {
-    if (!value || !this.isValueNumberOrString(value))
-      throw new Error('A new node has to have a string or number value.');
-
-    const newNode = new Node(value);
-
-    if (this.head === null) {
-      return (this.head = newNode);
-    }
-
-    newNode.previous = this.head;
-    this.head = newNode;
-    this.length++;
-  }
-
-  pop() {
-    if (this.head.previous === null) {
-      this.head = null;
-    }
-
-    const newHead = this.head.previous;
-    this.head = newHead;
-    this.length--;
-  }
-
   printList() {
     const arrayToBePrinted = [];
     const nodes = this.length;
@@ -58,5 +33,58 @@ export class LinkedListSimple {
     }
 
     console.log(arrayToBePrinted);
+  }
+
+  push(value) {
+    if (!value || !this.isValueNumberOrString(value))
+      throw new Error('A new node has to have a string or number value.');
+
+    const newNode = new Node(value);
+
+    if (this.head === null) {
+      this.head = newNode;
+      this.length++;
+      return;
+    }
+
+    newNode.previous = this.head;
+    this.head = newNode;
+    this.length++;
+  }
+
+  pop() {
+    if (!this.length) {
+      return;
+    }
+
+    if (this.head.previous === null) {
+      this.head = null;
+    }
+
+    const newHead = this.head.previous;
+    this.head = newHead;
+    this.length--;
+  }
+
+  get(position) {
+    if (typeof position !== 'number') {
+      throw new Error('A position must be a number');
+    }
+    if (!this.length) {
+      throw new Error('There are no elements.');
+    }
+    if (position > this.length - 1 || position < 0) {
+      throw new Error('This position does not exist on the list.');
+    }
+
+    const nodes = this.length;
+    let currentNode = this.head;
+    for (let node = nodes - 1; node >= 0; node--) {
+      if (node === position) {
+        return console.log(currentNode);
+      }
+      const previousNode = currentNode.previous;
+      currentNode = previousNode;
+    }
   }
 }
