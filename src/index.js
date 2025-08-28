@@ -1,10 +1,14 @@
-import {
-  saveThePrisoner,
-  saveThePrisonerMock,
-} from './hackerRank/problemSolving/save-the-prisoner.js';
+import { LinkedListSimple } from './practice/linkedList.js';
 
-saveThePrisoner(
-  saveThePrisonerMock.n,
-  saveThePrisonerMock.m,
-  saveThePrisonerMock.s
-);
+function main() {
+  const newList = new LinkedListSimple();
+
+  newList.push(5);
+  newList.push(10);
+  newList.push(15);
+  newList.push(20);
+
+  newList.printList();
+}
+
+main();

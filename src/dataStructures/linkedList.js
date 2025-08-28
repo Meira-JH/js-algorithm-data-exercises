@@ -10,7 +10,7 @@ class Node {
   }
 }
 
-export class linkedList {
+export class LinkedList {
   //defines head, tail and length
   constructor() {
     this.head = null;
