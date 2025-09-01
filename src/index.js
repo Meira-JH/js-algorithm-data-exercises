@@ -8,7 +8,7 @@ function main() {
   newList.push(15);
   newList.push(20);
 
-  newList.get();
+  newList.printList();
 }
 
 main();

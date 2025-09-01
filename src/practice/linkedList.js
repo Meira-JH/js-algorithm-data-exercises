@@ -23,16 +23,27 @@ export class LinkedListSimple {
   }
 
   printList() {
-    const arrayToBePrinted = [];
+    let listToPrint = '';
     const nodes = this.length;
     let current = this.head;
 
     for (let node = 0; node <= nodes; node++) {
-      arrayToBePrinted.unshift(current.value);
+      if (node === 0) {
+        listToPrint = `${current.value} (head)`;
+        current = current.previous;
+
+        continue;
+      }
+      if (node === this.length - 1) {
+        listToPrint = `(tail) ${current.value} -> ${listToPrint}`;
+        break;
+      }
+
+      listToPrint = `${current.value} -> ${listToPrint}`;
       current = current.previous;
     }
 
-    console.log(arrayToBePrinted);
+    console.log(listToPrint);
   }
 
   push(value) {
