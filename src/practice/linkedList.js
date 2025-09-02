@@ -22,10 +22,15 @@ export class LinkedListSingly {
     throw new Error('A new node has to have a string or number value.');
   }
 
-  checkIfPositionIsValid(position) {
+  checkIfPositionIsValid(position, isMethodInsert = false) {
     if (typeof position !== 'number') {
       throw new Error('A position must be a number');
     }
+
+    if (isMethodInsert && position === this.length) {
+      return;
+    }
+
     if (position > this.length - 1 || position < 0) {
       throw new Error('This position does not exist on the list.');
     }
@@ -175,6 +180,56 @@ export class LinkedListSingly {
   delete(position) {
     this.checkIfPositionIsValid(position);
     this.deleteNode(position, this.length - 1, this.head);
+    this.printList();
+  }
+
+  insertNewNode(value, positionToInsert, pointerPosition, currentNode) {
+    if (positionToInsert === this.length) {
+      this.head = new Node(value);
+      this.head.previous = currentNode;
+      this.length++;
+
+      return console.log(
+        `Node on position ${pointerPosition} inserted successfully.`
+      );
+    }
+
+    if (pointerPosition === 0 && positionToInsert === 0) {
+      const newNode = new Node(value);
+      currentNode.previous = newNode;
+      this.length++;
+      return console.log(
+        `Node on position ${positionToInsert} inserted successfully.`
+      );
+    }
+
+    if (pointerPosition === 0) {
+      return;
+    }
+
+    if (pointerPosition === positionToInsert) {
+      const newNode = new Node(value);
+      newNode.previous = currentNode.previous;
+      currentNode.previous = newNode;
+      this.length++;
+
+      return console.log(
+        `Node on position ${pointerPosition} inserted successfully.`
+      );
+    }
+
+    this.insertNewNode(
+      value,
+      positionToInsert,
+      pointerPosition - 1,
+      currentNode.previous
+    );
+  }
+
+  insert(position, value) {
+    this.checkIfPositionIsValid(position, true);
+    this.checkIfValueNumberOrString(value);
+    this.insertNewNode(value, position, this.length - 1, this.head);
     this.printList();
   }
 }

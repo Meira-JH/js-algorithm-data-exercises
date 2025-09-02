@@ -7,7 +7,8 @@ function main() {
   newList.push(10);
   newList.push(15);
   newList.push(20);
-  newList.delete(3);
+  newList.delete(0);
+  newList.insert(0, 8759);
 }
 
 main();
