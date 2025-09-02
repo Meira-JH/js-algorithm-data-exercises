@@ -5,7 +5,7 @@ class Node {
   }
 }
 
-export class LinkedListSimple {
+export class LinkedListSingly {
   constructor() {
     this.head = null;
     this.length = 0;
@@ -128,6 +128,53 @@ export class LinkedListSimple {
     this.checkIfValueNumberOrString(value);
     this.checkIfPositionIsValid(position);
     this.setNewNode(value, position, this.length - 1, this.head);
+    this.printList();
+  }
+
+  deleteNode(positionToDelete, pointerPosition, currentNode) {
+    if (positionToDelete === this.length - 1) {
+      this.head = currentNode.previous;
+      this.length--;
+
+      return console.log(
+        `Node on position ${pointerPosition} deleted successfully.`
+      );
+    }
+
+    if (pointerPosition === 1 && positionToDelete === 0) {
+      currentNode.previous = null;
+      this.tail = currentNode;
+      this.length--;
+      return console.log(
+        `Node on position ${positionToDelete} deleted successfully.`
+      );
+    }
+
+    if (pointerPosition === 0) {
+      return;
+    }
+
+    if (pointerPosition === positionToDelete + 1) {
+      const nodeToDelete = currentNode.previous;
+
+      currentNode.previous = nodeToDelete.previous;
+      this.length--;
+
+      return console.log(
+        `Node on position ${pointerPosition - 1} deleted successfully.`
+      );
+    }
+
+    this.deleteNode(
+      positionToDelete,
+      pointerPosition - 1,
+      currentNode.previous
+    );
+  }
+
+  delete(position) {
+    this.checkIfPositionIsValid(position);
+    this.deleteNode(position, this.length - 1, this.head);
     this.printList();
   }
 }

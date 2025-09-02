@@ -1,13 +1,13 @@
-import { LinkedListSimple } from './practice/linkedList.js';
+import { LinkedListSingly } from './practice/linkedList.js';
 
 function main() {
-  const newList = new LinkedListSimple();
+  const newList = new LinkedListSingly();
 
   newList.push(5);
   newList.push(10);
   newList.push(15);
   newList.push(20);
-  newList.set(0, 30);
+  newList.delete(3);
 }
 
 main();
