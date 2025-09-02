@@ -11,15 +11,24 @@ export class LinkedListSimple {
     this.length = 0;
   }
 
-  isValueNumberOrString(value) {
+  checkIfValueNumberOrString(value) {
     if (typeof value === 'number') {
-      return true;
+      return;
     }
     if (typeof value === 'string') {
-      return true;
+      return;
     }
 
-    return false;
+    throw new Error('A new node has to have a string or number value.');
+  }
+
+  checkIfPositionIsValid(position) {
+    if (typeof position !== 'number') {
+      throw new Error('A position must be a number');
+    }
+    if (position > this.length - 1 || position < 0) {
+      throw new Error('This position does not exist on the list.');
+    }
   }
 
   printList() {
@@ -31,9 +40,9 @@ export class LinkedListSimple {
       if (node === 0) {
         listToPrint = `${current.value} (head)`;
         current = current.previous;
-
         continue;
       }
+
       if (node === this.length - 1) {
         listToPrint = `(tail) ${current.value} -> ${listToPrint}`;
         break;
@@ -47,8 +56,7 @@ export class LinkedListSimple {
   }
 
   push(value) {
-    if (!value || !this.isValueNumberOrString(value))
-      throw new Error('A new node has to have a string or number value.');
+    this.checkIfValueNumberOrString(value);
 
     const newNode = new Node(value);
 
@@ -78,14 +86,9 @@ export class LinkedListSimple {
   }
 
   get(position) {
-    if (typeof position !== 'number') {
-      throw new Error('A position must be a number');
-    }
+    this.checkIfPositionIsValid(position);
     if (!this.length) {
       throw new Error('There are no elements.');
-    }
-    if (position > this.length - 1 || position < 0) {
-      throw new Error('This position does not exist on the list.');
     }
 
     const nodes = this.length;
@@ -97,5 +100,34 @@ export class LinkedListSimple {
       const previousNode = currentNode.previous;
       currentNode = previousNode;
     }
+  }
+
+  setNewNode(value, positionToSet, pointerPosition, currentNode) {
+    if (pointerPosition === positionToSet) {
+      currentNode.value = value;
+      console.log(
+        `New value ${value} for node position ${pointerPosition} was set successfully.`
+      );
+      console.log(currentNode);
+      return;
+    }
+
+    if (pointerPosition === 0) {
+      return;
+    }
+
+    this.setNewNode(
+      value,
+      positionToSet,
+      pointerPosition - 1,
+      currentNode.previous
+    );
+  }
+
+  set(position, value) {
+    this.checkIfValueNumberOrString(value);
+    this.checkIfPositionIsValid(position);
+    this.setNewNode(value, position, this.length - 1, this.head);
+    this.printList();
   }
 }

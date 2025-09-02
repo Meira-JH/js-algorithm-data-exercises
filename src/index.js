@@ -7,8 +7,7 @@ function main() {
   newList.push(10);
   newList.push(15);
   newList.push(20);
-
-  newList.printList();
+  newList.set(0, 30);
 }
 
 main();
