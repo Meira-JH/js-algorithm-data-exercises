@@ -1,14 +1,16 @@
-import { LinkedListSingly } from './practice/linkedList.js';
+import {
+  circularArrayMock,
+  circularArrayRotation,
+} from './hackerRank/problemSolving/circular-array-rotation.js';
 
 function main() {
-  const newList = new LinkedListSingly();
+  const result = circularArrayRotation(
+    circularArrayMock.array,
+    circularArrayMock.numberOfRotations,
+    circularArrayMock.positionsToShow
+  );
 
-  newList.push(5);
-  newList.push(10);
-  newList.push(15);
-  newList.push(20);
-  newList.delete(0);
-  newList.insert(0, 8759);
+  console.log('RESULT', result);
 }
 
 main();
