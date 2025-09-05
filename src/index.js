@@ -1,10 +1,13 @@
 import {
-  mockPermutation,
-  permutationEquation,
-} from './hackerRank/problemSolving/permutation-equation.js';
+  jumpingOnTheClouds,
+  mockJumpingOnTheClouds,
+} from './hackerRank/problemSolving/jumping-on-the-clouds.js';
 
 function main() {
-  const result = permutationEquation(mockPermutation);
+  const result = jumpingOnTheClouds(
+    mockJumpingOnTheClouds.arrayOfClouds,
+    mockJumpingOnTheClouds.jumpIndexSize
+  );
 
   console.log('RESULT', result);
 }
