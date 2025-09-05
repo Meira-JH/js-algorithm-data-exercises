@@ -1,14 +1,10 @@
 import {
-  circularArrayMock,
-  circularArrayRotation,
-} from './hackerRank/problemSolving/circular-array-rotation.js';
+  mockPermutation,
+  permutationEquation,
+} from './hackerRank/problemSolving/permutation-equation.js';
 
 function main() {
-  const result = circularArrayRotation(
-    circularArrayMock.array,
-    circularArrayMock.numberOfRotations,
-    circularArrayMock.positionsToShow
-  );
+  const result = permutationEquation(mockPermutation);
 
   console.log('RESULT', result);
 }
