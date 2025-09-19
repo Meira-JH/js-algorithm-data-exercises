@@ -1,13 +1,7 @@
-import {
-  jumpingOnTheClouds,
-  mockJumpingOnTheClouds,
-} from './hackerRank/problemSolving/jumping-on-the-clouds.js';
+import { mergeSort, mockMergeSort } from './practice/mergeSort.js';
 
 function main() {
-  const result = jumpingOnTheClouds(
-    mockJumpingOnTheClouds.arrayOfClouds,
-    mockJumpingOnTheClouds.jumpIndexSize
-  );
+  const result = mergeSort(mockMergeSort.arrayToSort);
 
   console.log('RESULT', result);
 }
