@@ -1,7 +1,7 @@
-import { mergeSort, mockMergeSort } from './practice/mergeSort.js';
+import { bubbleSort, mockBubbleSort } from './practice/bubbleSort.js';
 
 function main() {
-  const result = mergeSort(mockMergeSort.arrayToSort);
+  const result = bubbleSort(mockBubbleSort.arrayToSort);
 
   console.log('RESULT', result);
 }
