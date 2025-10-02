@@ -1,7 +1,10 @@
-import { bubbleSort, mockBubbleSort } from './practice/bubbleSort.js';
+import {
+  CountElementsGreaterThenPrevious,
+  mockCountGreater,
+} from './hackerRank/softwareEngineerPrepKit/countElementsGreaterThenPrevious.js';
 
 function main() {
-  const result = bubbleSort(mockBubbleSort.arrayToSort);
+  const result = CountElementsGreaterThenPrevious(mockCountGreater.array);
 
   console.log('RESULT', result);
 }

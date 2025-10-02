@@ -12,8 +12,6 @@ export function bubbleSort(array) {
   let tempElement = null;
 
   while (!isArraySorted) {
-    console.log('array', array);
-
     if (array[i] > array[i + 1] && i < array.length - 1) {
       tempElement = array[i];
       array[i] = array[i + 1];
