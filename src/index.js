@@ -1,12 +1,12 @@
 import {
-  isAlphabeticPalindrome,
-  mockPalindromeFilter,
-} from './hackerRank/softwareEngineerPrepKit/checkPalindromeFilter.js';
+  deleteDuplicates,
+  mockDeleteDuplicatesList,
+} from './hackerRank/softwareEngineerPrepKit/deleteDuplicates.js';
 
 function main() {
-  const result = isAlphabeticPalindrome(mockPalindromeFilter.code);
+  const result = deleteDuplicates(mockDeleteDuplicatesList);
 
-  console.log('RESULT', result);
+  console.dir(result, { depth: null });
 }
 
 main();
