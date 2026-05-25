@@ -74,3 +74,39 @@ export function repeatedAinString (s, n){
     return counterOfRepetitionAs * repetitions + restOfAs;
     
 }
+
+
+// Two‑Sum Existence
+
+// Given an array of integers nums and an integer target, 
+// return true if there exist two distinct elements in the 
+// array whose sum equals target. Otherwise, return false.
+
+// Examples
+// nums = [2, 7, 11, 15], target = 9 → true (2 + 7)
+// nums = [3, 2, 4], target = 6 → true (2 + 4)
+// nums = [3, 3], target = 6 → true (3 + 3, distinct indices but same value)
+// nums = [1, 2, 3], target = 7 → false
+
+export const twoSumExistenceMock = {
+    nums: [2, 7, 11, 15],
+    target: 9
+}
+
+export function twoSumExistence(nums, target) {
+
+    // set seen numbers
+    const seenNumbers = new Set();
+
+    //iterate the array
+    for (let i = 0; i < nums.length; i++){
+        // find which number would be necessary 
+        // to sum with to arrive at target
+        const sumToTarget = target - nums[i];
+        if(seenNumbers.has(sumToTarget)) return true
+
+        seenNumbers.add(nums[i])
+    }
+
+    return false
+}
