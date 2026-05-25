@@ -110,3 +110,38 @@ export function twoSumExistence(nums, target) {
 
     return false
 }
+
+// Find first non repeating index
+// Given a string s, find the first non-repeating 
+// character and return its index.
+// If it doesn’t exist, return -1.
+
+export const mockFirstUniqueCharacter = {
+    s: 'leetcode'
+}
+
+
+export function findFirstUniqueChar (s){
+
+    //create the hashMap
+    const hashMap = new Map();
+
+    // iterate the string
+    for(let i = 0; i < s.length; i++){
+        // set the char with frequency (add repetitions)
+        hashMap.set(s[i], (hashMap.get(s[i]) || 0) + 1)
+    }
+
+        console.log('hashMap', hashMap)
+
+    // iterate again to find first non-repeat
+    for(let i = 0; i < s.length; i++ ){
+        const element = hashMap.get(s[i])
+        if( element === 1){
+            return i
+        }
+    }
+
+
+    return - 1
+}
