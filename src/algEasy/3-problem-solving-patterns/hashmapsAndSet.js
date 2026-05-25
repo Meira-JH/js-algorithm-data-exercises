@@ -1,0 +1,76 @@
+// Focus: Membership and complements
+// Contains Duplicate, Two Sum
+// Comcept: Set membership; complement lookup with Map
+// Templates to memorize:
+
+function template() {
+
+    const set = new Set();
+    const hashMap = new Map();
+}
+
+// Familiarizing with Set:
+
+// Hacker Rank example: 
+
+// There is a string, , of lowercase English letters that is repeated 
+// infinitely many times. Given an integer, , find and print the 
+// number of letter a's in the first  letters of the infinite string.
+// Example
+// The substring we consider is , the first  characters of the infinite 
+// string. There are  occurrences of a in the substring.
+
+// Function Description
+
+// Complete the repeatedString function in the editor below.
+// repeatedString has the following parameter(s):
+
+// s: a string to repeat
+// n: the number of characters to consider
+// Returns
+
+// int: the frequency of a in the substring
+// Input Format
+
+// The first line contains a single string, .
+// The second line contains an integer, 
+
+export const mockRepeatedA = 'aba'
+export const mockCharactersOfString = 10
+
+export function repeatedAinString (s, n){
+    // defines de necessary loops to see the number of characters in "s"
+    let repetitions = Math.floor( n / s.length )
+    // calculate the rest of chars of an unfinished loop
+    const rest = n % s.length;
+    // Set 'a'
+    const setForA = new Set();
+    setForA.add('a')
+    // create counter of As
+    let counterOfRepetitionAs = 0;
+    // create counter rest of As
+    let restOfAs = 0;
+    
+        // iterate the full looped repetitions
+        for (let i = 0; i < s.length; i++){
+            // check if it is an "a"
+            if(setForA.has(s[i])){
+                counterOfRepetitionAs++
+            }
+        }
+
+    // if there if an uncompleted loop to iterate, 
+    // iterate and count the As
+    if(rest){
+        for (let i = 0; i < rest; i++){
+            if(setForA.has(s[i])){
+                restOfAs++
+            }        
+        }
+    }
+
+
+    // return counting of As
+    return counterOfRepetitionAs * repetitions + restOfAs;
+    
+}

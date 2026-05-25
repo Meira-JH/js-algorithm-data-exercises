@@ -1,3 +1,4 @@
+import { mockCharactersOfString, mockRepeatedA, repeatedAinString } from './algEasy/3-problem-solving-patterns/hashmapsAndSet.js';
 import {
   deleteDuplicates,
   mockDeleteDuplicatesList,
@@ -6,7 +7,7 @@ import { merge, mockMergeSortedArray } from './leetCode/merge-sorted-array.js';
 import { mockRemoveElement, removeElement } from './leetCode/remove-element.js';
 
 function main() {
-  const result = removeElement(mockRemoveElement.nums, mockRemoveElement.val);
+  const result = repeatedAinString(mockRepeatedA, mockCharactersOfString);
 
   console.dir(result, { depth: null });
 }
